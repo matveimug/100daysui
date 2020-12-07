@@ -1,8 +1,37 @@
 <template>
   <div class="flex-center">
-    <div class="home-content">
-      <h1>Siia tuleb esimene ülesanne (sign-up form)</h1>
-      <p>Challenge: Design Hint... Create a sign up page, modal, form, or app screen related to signing up for something. It could be for a volunteer event, contest registration, a giveaway, or anything you can image.</p>
+    <div class="login-card">
+      <form class="login-form">
+        <h1>Create a new account</h1>
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="name" id="name">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password">
+        </div>
+        <button type="submit">Sign up</button>
+      </form>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  .login {
+    &-card {
+      width: 360px;
+      background: white;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      padding: 3rem;
+      h1 {
+        margin-top: 0;
+      }
+    }
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+</style>
