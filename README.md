@@ -1,5 +1,7 @@
 # 100daysui
 
+100 days ui challenge - https://www.dailyui.co/. Liitu sellega ka :) Esimese ülesande saad kätte, kui endale projekti kloonid, dependencied installid ja kohalikus masinas käima lükkad.
+
 ## Project setup
 ```
 npm install
