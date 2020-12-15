@@ -11,6 +11,11 @@
           <label for="password">Password</label>
           <input type="password" id="password">
         </div>
+        <div class="terms">
+          <a href="#terms">
+            <small>Terms and conditions</small>
+          </a>
+        </div>
         <button type="submit">Sign up</button>
       </form>
     </div>
@@ -22,7 +27,7 @@
     &-card {
       width: 300px;
       background: white;
-      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.06);
       padding: 3rem;
       border-radius: 8px;
       text-align: left;
@@ -42,6 +47,9 @@
         color: white;
         font-weight: 600;
         cursor: pointer;
+        &:hover {
+          background-color: #42b96a;
+        }
       }
     }
   }
@@ -51,17 +59,41 @@
     margin-bottom: 2rem;
     input {
       border: none;
-      border-bottom: 2px solid #e0e0e0;
+      border-bottom: 1px solid #afafaf;
       padding: 10px 5px;
     }
     label {
       margin-bottom: 5px;
-      color: #969696;
+      color: #afafaf;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    &:hover {
+      input {
+        border-bottom-color: #8d8d8d;
+      }
+      label {
+        color: #8d8d8d;
+      }
     }
   }
 
   .form-group input:focus {
     outline: none;
     border-bottom-color: #42b983;
+    background-color: #f7f7f7;
+  }
+  .terms {
+    a {
+      color: darkgray;
+      text-decoration: none;
+      &:hover {
+        color: gray;
+      
+      }
+    }
+    text-align: center;
+    margin-bottom: 1rem;
   }
 </style>
