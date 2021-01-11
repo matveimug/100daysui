@@ -1,0 +1,45 @@
+<template>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      countDown: 60,
+      running: false,
+    };
+  },
+  methods: {
+    setRunning(bool) {
+      this.running = bool;
+    },
+    parseSeconds(seconds) {
+      return new Date(seconds * 1000).toISOString().substr(11, 8)
+    },
+    countDownTimer() {
+      if (this.countDown > 0 && this.running) {
+        setTimeout(() => {
+          this.countDown -= 1;
+          this.countDownTimer();
+        }, 1000);
+      }
+    },
+    add(sec) {
+      this.countDown += parseInt(sec);
+    },
+    rem(sec) {
+      if (this.countDown >= parseInt(sec)) {
+        this.countDown -= parseInt(sec);
+      }
+    }
+  },
+  watch: {
+    running: function () {
+      this.countDownTimer();
+    }
+  },
+  created() {
+  
+  }
+};
+</script>
