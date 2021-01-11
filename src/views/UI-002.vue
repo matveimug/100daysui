@@ -1,6 +1,7 @@
 <template>
   <div>
-    {{ parseSeconds(countDown) }}
+    <h2>Countdown timer</h2>
+    <h1>{{ parseSeconds(countDown) }}</h1>
     <button type="button" @click="rem(3600)">- hr</button>
     <button type="button" @click="add(3600)">+ hr</button>
     <button type="button" @click="rem(60)">- min</button>
