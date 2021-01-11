@@ -1,7 +1,12 @@
 <template>
   <div>
-    {{ countDown }}
-    <input v-model="countDown" type="number" />
+    {{ parseSeconds(countDown) }}
+    <button type="button" @click="rem(3600)">- hr</button>
+    <button type="button" @click="add(3600)">+ hr</button>
+    <button type="button" @click="rem(60)">- min</button>
+    <button type="button" @click="add(60)">+ min</button>
+    <button type="button" @click="rem(1)">- s</button>
+    <button type="button" @click="add(1)">+ s</button>
     <button type="button" @click="setRunning(true)">Start</button>
     <button type="button" @click="setRunning(false)">Stop</button>
   </div>
@@ -19,6 +24,9 @@ export default {
     setRunning(bool) {
       this.running = bool;
     },
+    parseSeconds(seconds) {
+      return new Date(seconds * 1000).toISOString().substr(11, 8)
+    },
     countDownTimer() {
       if (this.countDown > 0 && this.running) {
         setTimeout(() => {
@@ -27,6 +35,14 @@ export default {
         }, 1000);
       }
     },
+    add(sec) {
+      this.countDown += parseInt(sec);
+    },
+    rem(sec) {
+      if (this.countDown >= parseInt(sec)) {
+        this.countDown -= parseInt(sec);
+      }
+    }
   },
   watch: {
     running: function () {
