@@ -1,9 +1,7 @@
 <template>
   <div>
     {{ countDown }}
-    <input v-model="hr" type="number" />
-    <input v-model="min" type="number" />
-    <input v-model="sec" type="number" />
+    <input v-model="countDown" type="number" />
     <button type="button" @click="setRunning(true)">Start</button>
     <button type="button" @click="setRunning(false)">Stop</button>
   </div>
@@ -13,10 +11,7 @@
 export default {
   data() {
     return {
-      hr: 0,
-      min: 0,
-      sec: 30,
-      countDown: 0,
+      countDown: 60,
       running: false,
     };
   },
@@ -36,21 +31,6 @@ export default {
   watch: {
     running: function () {
       this.countDownTimer();
-    },
-    hr: function () {
-      if (this.hr) {
-        this.countDown += this.hr * 3600;
-      }
-    },
-    min: function () {
-      if (this.min) {
-        this.countDown += this.min * 60;
-      }
-    },
-    sec: function () {
-      if (this.sec) {
-        this.countDown += this.sec;
-      }
     }
   },
   created() {
