@@ -3,6 +3,7 @@
     <div class="login-card">
       <form class="login-form">
         <h1>Create a new account</h1>
+        
         <div class="form-group">
           <label for="email">Your E-mail</label>
           <input type="email" id="email">
