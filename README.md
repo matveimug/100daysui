@@ -26,3 +26,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Deploy to Netlify
+- go to https://app.netlify.com/, log in with github
+- new site from git, github, choose repo & branch
+- specify settings, deploy
+- share the generated site url in our Teams thing
